@@ -3,6 +3,7 @@
 ### Introduction
 ScreenKIN is a web-based application for real-time screen sharing using WebRTC technology. This guide provides detailed instructions for both the sender and receiver to establish a screen sharing session.
 
+
 ### To Use
 
 #### Sender (Person 1)
@@ -40,6 +41,16 @@ ScreenKIN is a web-based application for real-time screen sharing using WebRTC t
 
 4. Send it to `sender (Person 1)`
 
+### Resources used
+
+- Tutorial Blog : https://www.videosdk.live/developer-hub/webrtc/webrtc-screen-sharing
+- MDN Docs : https://developer.mozilla.org/en-US/docs/Web/API/Screen_Capture_API/Using_Screen_Capture
+- Geeks for Geeks article : https://www.geeksforgeeks.org/how-to-create-copy-to-clipboard-button/
+- Tailwind Docs : https://tailwindcss.com/docs/installation
+- ChatGPT offcourse
+- Some Random Snippets from the internet
+
+
 ### Local Setup
 
 #### Requirements:
@@ -55,3 +66,8 @@ ScreenKIN is a web-based application for real-time screen sharing using WebRTC t
     - `git clone https://github.com/porwalshreyaa/ScreenKin.git` <br>or <br>`git clone git@github.com:porwalshreyaa/ScreenKin.git`
 
 2. Open `index.html` in a Browser
+
+<img src="Capture.PNG">
+<img src="Capture2.PNG">
+<img src="Capture3.PNG">
+<img src="Capture4.PNG">

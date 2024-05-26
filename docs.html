@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ScreenKin</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="./output.css" rel="stylesheet">
+</head>
+
+<body class="dark:bg-slate-950 flex flex-col min-h-screen">
+  <div class="flex-1">
+  <h1 class="text-4xl text-center mx-auto font-extrabold font-sans p-10 m-6 italic">ScreenKIN - Documentation</h1>
+  
+  <div class="rounded-lg mx-auto items-center space-x-4 p-4 m-2 max-w-fit row-span-full flex-col text-center justify-center">
+    <!-- <h1 class="text-lg text-center mx-auto font-bold font-sans p-1 m-2">About</h1> -->
+      <p class="font-medium border-indigo-50 p-2 px-8 text-gray-200">
+        <ul class="text-left">
+          <li class="list-item list-disc ">Read <a class="no-underline italic font-medium text-purple-500" href="README.md" target="_blank">Documentation</a></li>
+          <li class="list-item list-disc ">Lorem ipsum dolor sit amet consectetur adipisicing elit</li>
+          <li class="list-item list-disc ">Lorem ipsum dolor sit amet consectetur adipisicing elit</li>
+          <li class="list-item list-disc ">Lorem ipsum dolor sit amet consectetur adipisicing elit</li>
+      </ul>
+      </p>
+  </div>
+
+  <!-- sender div -->
+  <div class="mx-auto  items-center px-auto max-w-screen-lg row-auto flex justify-center" id="sender"
+    style="display:none;">
+    <div class="mx-auto  items-center space-x-4 p-6 px-auto max-w-screen-lg row-auto flex justify-center">
+      <button class="rounded-lg font-medium border-indigo-50 p-2 px-8 bg-green-600 text-gray-200" id="start">Start
+        Sharing</button>
+      <button disabled class="rounded-lg font-medium border-indigo-50 p-2 px-8 bg-red-300 text-gray-200" id="stop">Stop
+        Sharing</button>
+    </div>
+    <div class="mx-auto  items-center space-x-4 p-6 px-auto max-w-screen-lg row-auto flex justify-center">
+      <textarea
+        class="rounded-lg font-medium border-indigo-50mx-auto bg-transparent self-center space-x-4 p-6 max-w-md text-gray-200 flex"
+        id="offer" placeholder="Offer will appear here" readonly></textarea>
+      <textarea
+        class="rounded-lg font-medium border-indigo-50mx-auto bg-slate-50 self-center space-x-4 p-6 max-w-md text-gray-800 flex"
+        id="answerSender" placeholder="Paste answer here"></textarea>
+      <textarea
+        class="rounded-lg font-medium border-indigo-50mx-auto bg-transparent self-center space-x-4 p-6 max-w-md text-gray-200 flex"
+        id="iceCandidatesSender" placeholder="ICE candidates will appear here" readonly></textarea>
+    </div>
+    <div class="mx-auto  items-center space-x-4 p-6 px-auto max-w-screen-lg row-auto flex justify-center">
+      <video id="video" autoplay playsinline></video>
+    </div>
+  </div>
+  <!-- receiver div -->
+  <div class="mx-auto  items-center space-x-4 p-6 px-auto max-w-screen-lg flex flex-wrap justify-center" id="receiver"
+    style="display:none;">
+    <div class="mx-auto  items-center space-x-4 p-6 px-auto max-w-screen-lg row-auto flex flex-wrap justify-center">
+      <textarea
+        class="rounded-lg font-normal border-indigo-50mx-auto bg-transparent self-center space-x-4 p-4 m-4 max-w-md min-w-sm text-gray-200 flex"
+        id="answerReceiver" placeholder="Answer will appear here" readonly></textarea>
+      <textarea
+        class="rounded-lg font-normal border-indigo-50mx-auto bg-transparent self-center space-x-4 p-4 m-4 max-w-md min-w-sm text-gray-200 flex"
+        id="iceCandidatesReceiver" placeholder="ICE candidates will appear here" readonly></textarea>
+      <textarea
+        class="rounded-lg font-normal border-indigo-50mx-auto bg-slate-50 self-center space-x-4 p-4 m-4 max-w-md min-w-sm text-gray-800 flex"
+        id="senderIceCandidatesReceiver" placeholder="Paste ICE candidates from sender here"></textarea>
+      <textarea
+        class="rounded-lg font-normal border-indigo-50mx-auto bg-slate-50 self-center space-x-4 p-4 m-4 max-w-md min-w-sm text-gray-800 flex"
+        id="offerReceiver" placeholder="Paste offer here"></textarea>
+    </div>
+    <div class="mx-auto  items-center space-x-4 p-6 px-auto max-w-screen-lg row-auto flex justify-center">
+      <video id="videoReceiver" autoplay playsinline></video>
+    </div>
+  </div>
+</div>
+  <footer class="text-gray-300 text-center p-6">
+    made by <a href="https://www.soshals.app/shreya" class="no-underline italic font-medium text-purple-500">shreya</a>
+  </footer>
+</body>
+</html>
