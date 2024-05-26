@@ -1,4 +1,4 @@
-## SSBuddy
+## ScreenKIN
 
 # DOCS
 
