@@ -1,3 +1,4 @@
-# SSBuddy
+## SSBuddy
 
-An easy screen share chrome extension.
+# DOCS
+

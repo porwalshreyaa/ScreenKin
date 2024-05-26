@@ -1,33 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HTML 5 Boilerplate</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-	
 
-<p>
-  This example shows you the contents of the selected part of your display.
-  Click the Start Capture button to begin.
-</p>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ScreenKin</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="./output.css" rel="stylesheet">
+</head>
 
-<p>
-  <button id="start">Start Capture</button>&nbsp;<button id="stop">
-    Stop Capture
-  </button>
-</p>
+<body class="dark:bg-slate-950">
+  <h1 class="text-4xl text-center mx-auto font-extrabold font-sans p-10 m-6 italic">ScreenKIN</h1>
+  <div class="mx-auto items-center space-x-4 p-6 max-w-sm row-auto flex justify-center">
+    <select class="rounded-lg font-medium border-indigo-50 p-2 px-8 bg-purple-100 text-gray-800"
+      id="role">
+      <option value="sender">Sender</option>
+      <option value="receiver">Receiver</option>
+    </select>
+    <button class="rounded-lg font-medium border-indigo-50 p-2 px-8 bg-purple-600 text-gray-200"
+      id="select">Select</button>
+  </div>
 
-<video id="video" autoplay></video>
-<br />
 
-<strong>Log:</strong>
-<br />
-<pre id="log"></pre>
+  <!-- sender div -->
+  <div class="mx-auto  items-center px-auto max-w-screen-lg row-auto flex justify-center" id="sender" style="display:none;">
+    <div class="mx-auto  items-center space-x-4 p-6 px-auto max-w-screen-lg row-auto flex justify-center">
+      <button class="rounded-lg font-medium border-indigo-50 p-2 px-8 bg-green-600 text-gray-200" id="start">Start
+        Sharing</button>
+      <button disabled class="rounded-lg font-medium border-indigo-50 p-2 px-8 bg-red-300 text-gray-200" id="stop">Stop
+        Sharing</button>
+    </div>
+    <div class="mx-auto  items-center space-x-4 p-6 px-auto max-w-screen-lg row-auto flex justify-center">
+      <textarea
+        class="rounded-lg font-medium border-indigo-50mx-auto bg-transparent self-center space-x-4 p-6 max-w-md text-gray-200 flex"
+        id="offer" placeholder="Offer will appear here" readonly></textarea>
+      <textarea
+        class="rounded-lg font-medium border-indigo-50mx-auto bg-slate-50 self-center space-x-4 p-6 max-w-md text-gray-800 flex"
+        id="answerSender" placeholder="Paste answer here"></textarea>
+      <textarea
+        class="rounded-lg font-medium border-indigo-50mx-auto bg-transparent self-center space-x-4 p-6 max-w-md text-gray-200 flex"
+        id="iceCandidatesSender" placeholder="ICE candidates will appear here" readonly></textarea>
+    </div>
+    <div class="mx-auto  items-center space-x-4 p-6 px-auto max-w-screen-lg row-auto flex justify-center">
+      <video id="video" autoplay playsinline></video>
+    </div>
+  </div>
 
-<script src="main.js"></script>
-  </body>
+
+  <!-- receiver div -->
+  <div class="mx-auto  items-center space-x-4 p-6 px-auto max-w-screen-lg row-auto flex justify-center" id="receiver"
+    style="display:none;">
+    <div class="mx-auto  items-center space-x-4 p-6 px-auto max-w-screen-lg row-auto flex justify-center">
+      <textarea class="rounded-lg font-medium border-indigo-50mx-auto bg-slate-50 self-center space-x-4 p-6 max-w-sm  text-gray-800 flex" id="offerReceiver"
+        placeholder="Paste offer here"></textarea>
+      <textarea class="rounded-lg font-medium border-indigo-50mx-auto bg-transparent self-center space-x-4 p-6 max-w-sm  text-gray-200 flex" id="answerReceiver"
+        placeholder="Answer will appear here" readonly></textarea>
+      <textarea class="rounded-lg font-medium border-indigo-50mx-auto bg-transparent self-center space-x-4 p-6 max-w-sm  text-gray-200 flex" id="iceCandidatesReceiver"
+        placeholder="ICE candidates will appear here" readonly></textarea>
+      <textarea class="rounded-lg font-medium border-indigo-50mx-auto bg-slate-50 self-center space-x-4 p-6 max-w-sm  text-gray-800 flex" id="senderIceCandidatesReceiver"
+        placeholder="Paste ICE candidates from sender here"></textarea>
+    </div>
+    <div class="mx-auto  items-center space-x-4 p-6 px-auto max-w-screen-lg row-auto flex justify-center">
+      <video id="videoReceiver" autoplay playsinline></video>
+    </div>
+  </div>
+  <!-- <div id="log"></div> -->
+  <script src="sender.js"></script>
+  <script src="receiver.js"></script>
+  <script>
+    document.getElementById('select').addEventListener('click', () => {
+      const role = document.getElementById('role').value;
+      if (role === 'sender') {
+        document.getElementById('sender').style.display = 'block';
+        document.getElementById('receiver').style.display = 'none';
+        loadSender();
+      } else {
+        document.getElementById('receiver').style.display = 'block';
+        document.getElementById('sender').style.display = 'none';
+        loadReceiver();
+      }
+      document.getElementById('role').style.display = 'none';
+      document.getElementById('select').style.display = 'none';
+    });
+  </script>
+
+
+</body>
+
 </html>
