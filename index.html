@@ -30,7 +30,7 @@
       <button disabled class="rounded-lg font-medium border-indigo-50 p-2 px-8 bg-red-300 text-gray-200" id="stop">Stop
         Sharing</button>
     </div>
-    <div class="mx-auto  items-center space-x-4 p-6 px-auto max-w-screen-lg row-auto flex flex-wrap justify-center">
+    <div class="mx-auto  items-center space-x-4 p-6 px-auto max-w-screen-lg row-auto flex flex-row justify-center">
       <textarea
         class="rounded-lg font-normal border-indigo-50mx-auto bg-transparent self-center space-x-4 p-4 m-4 max-w-md min-w-sm text-gray-200 flex"
         id="offer" placeholder="Offer will appear here" readonly></textarea>
@@ -48,7 +48,10 @@
   <!-- receiver div -->
   <div class="mx-auto  items-center space-x-4 p-4 px-auto max-w-screen-lg flex flex-wrap justify-center" id="receiver"
     style="display:none;">
-    <div class="mx-auto  items-center space-x-4 p-6 px-auto max-w-screen-lg row-auto flex flex-wrap justify-center">
+    <div class="mx-auto  items-center space-x-4 p-6 px-auto max-w-screen-lg row-auto flex flex-row justify-center">
+      <textarea
+        class="rounded-lg font-normal border-indigo-50mx-auto bg-slate-50 self-center space-x-4 p-4 m-4 max-w-md min-w-sm text-gray-800 flex"
+        id="offerReceiver" placeholder="Paste offer here"></textarea>
       <textarea
         class="rounded-lg font-normal border-indigo-50mx-auto bg-transparent self-center space-x-4 p-4 m-4 max-w-md min-w-sm text-gray-200 flex"
         id="answerReceiver" placeholder="Answer will appear here" readonly></textarea>
@@ -58,9 +61,6 @@
       <textarea
         class="rounded-lg font-normal border-indigo-50mx-auto bg-slate-50 self-center space-x-4 p-4 m-4 max-w-md min-w-sm text-gray-800 flex"
         id="senderIceCandidatesReceiver" placeholder="Paste ICE candidates from sender here"></textarea>
-      <textarea
-        class="rounded-lg font-normal border-indigo-50mx-auto bg-slate-50 self-center space-x-4 p-4 m-4 max-w-md min-w-sm text-gray-800 flex"
-        id="offerReceiver" placeholder="Paste offer here"></textarea>
     </div>
     <div class="mx-auto  items-center space-x-4 p-6 px-auto max-w-screen-lg row-auto flex justify-center">
       <video id="videoReceiver" autoplay playsinline></video>
