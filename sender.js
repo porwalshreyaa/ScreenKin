@@ -2,7 +2,12 @@
 // MDN Docs : https://developer.mozilla.org/en-US/docs/Web/API/Screen_Capture_API/Using_Screen_Capture
 
 function loadSender() {
-const peerConnection = new RTCPeerConnection();
+const configuration = {
+    iceServers: [
+      { urls: 'stun:stun.l.google.com:19302' } // Google's public STUN server
+    ]
+  };
+const peerConnection = new RTCPeerConnection(configuration);
 const answerElem = document.getElementById("answerSender");
 const startElem = document.getElementById("start");
 const stopElem = document.getElementById("stop");
