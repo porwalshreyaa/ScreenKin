@@ -1,7 +1,12 @@
 // Resources : https://www.videosdk.live/developer-hub/webrtc/webrtc-screen-sharing
 // MDN Docs : https://developer.mozilla.org/en-US/docs/Web/API/Screen_Capture_API/Using_Screen_Capture
 function loadReceiver() {
-const peerConnection = new RTCPeerConnection();
+const configuration = {
+    iceServers: [
+      { urls: 'stun:stun.l.google.com:19302' } // Google's public STUN server
+    ]
+  };
+const peerConnection = new RTCPeerConnection(configuration);
 const offerElem = document.getElementById("offerReceiver");
 const answerElem = document.getElementById("answerReceiver");
 const iceCandidatesElem = document.getElementById("iceCandidatesReceiver");
