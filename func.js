@@ -1,3 +1,22 @@
+// document.getElementById('select').addEventListener('click', () => 
+function changeScreen() {
+    const role = document.getElementById('role').value;
+    if (role === 'sender') {
+      document.getElementById('sender').style.display = 'block';
+      document.getElementById('receiver').style.display = 'none';
+      document.getElementById('first').style.display = 'none';
+      loadSender();
+    } else {
+      document.getElementById('receiver').style.display = 'block';
+      document.getElementById('sender').style.display = 'none';
+      document.getElementById('first').style.display = 'none';
+      loadReceiver();
+    };
+    document.getElementById('role').style.display = 'none';
+    document.getElementById('select').style.display = 'none';
+  }
+// );
+
 function hide(elem) {
     elem.style.visibility = 'hidden'
 }

@@ -16,13 +16,15 @@
   <div id="flashcopy" style="visibility: hidden;" class="rounded-sm font-thin text-center p-2 px-8 text-gray-200">"Copied to Clipboard"</div>
     
   <div class="mx-auto items-center space-x-4 p-6 max-w-sm row-auto flex justify-center">
-    <select class="rounded-lg font-medium border-indigo-50 p-2 px-8 bg-purple-100 text-gray-800" id="role">
+    <div class="mx-auto  items-center space-x-4 p-4 px-auto max-w-screen-lg flex flex-wrap justify-center" id="first"
+    style="display:block;">
+    <select style="" class="rounded-lg font-medium border-indigo-50 p-2 px-8 bg-purple-100 text-gray-800" id="role">
       <option value="sender">Sender</option>
       <option value="receiver">Receiver</option>
     </select>
-    <button class="rounded-lg font-medium border-indigo-50 p-2 px-8 bg-purple-600 text-gray-200"
+    <button onclick="changeScreen()" style="" class="rounded-lg font-medium border-indigo-50 p-2 px-8 bg-purple-600 text-gray-200"
       id="select">Select</button>
-
+</div>
   <!-- sender div -->
   <div class="mx-auto  items-center space-x-4 p-4 px-auto max-w-screen-lg flex flex-wrap justify-center" id="sender"
     style="display:none;">
@@ -90,21 +92,6 @@
   <script src="sender.js"></script>
   <script src="receiver.js"></script>
   <script src="func.js"></script>
-  <script>
-    document.getElementById('select').addEventListener('click', () => {
-      const role = document.getElementById('role').value;
-      if (role === 'sender') {
-        document.getElementById('sender').style.display = 'block';
-        document.getElementById('receiver').style.display = 'none';
-        loadSender();
-      } else {
-        document.getElementById('receiver').style.display = 'block';
-        document.getElementById('sender').style.display = 'none';
-        loadReceiver();
-      };
-      document.getElementById('role').style.display = 'none';
-      document.getElementById('select').style.display = 'none';
-    });
-  </script>
+
 </body>
 </html>
