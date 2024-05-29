@@ -2,12 +2,16 @@
 // MDN Docs : https://developer.mozilla.org/en-US/docs/Web/API/Screen_Capture_API/Using_Screen_Capture
 
 function loadSender() {
-const configuration = {
-    iceServers: [
-      { urls: 'stun:stun.l.google.com:19302' } // Google's public STUN server
-    ]
-  };
-const peerConnection = new RTCPeerConnection(configuration);
+  const configuration = {};
+
+  (async() => {
+    // const response = await fetch(`https://screenkin.metered.live/api/v1/turn/credentials?apiKey=${API_KEY}`);
+    const response = await fetch('/.netlify/functions/getTurnCredentials');
+    const iceServers = await response.json();
+    configuration.iceServers = iceServers
+  })();
+  
+  const peerConnection = new RTCPeerConnection(peerConfiguration);
 const answerElem = document.getElementById("answerSender");
 const startElem = document.getElementById("start");
 const stopElem = document.getElementById("stop");

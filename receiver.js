@@ -1,12 +1,23 @@
 // Resources : https://www.videosdk.live/developer-hub/webrtc/webrtc-screen-sharing
 // MDN Docs : https://developer.mozilla.org/en-US/docs/Web/API/Screen_Capture_API/Using_Screen_Capture
 function loadReceiver() {
-const configuration = {
-    iceServers: [
-      { urls: 'stun:stun.l.google.com:19302' } // Google's public STUN server
-    ]
-  };
-const peerConnection = new RTCPeerConnection(configuration);
+
+  const configuration = {};
+
+  (async() => {
+    const response = await fetch('/.netlify/functions/getTurnCredentials');
+    const iceServers = await response.json();
+    configuration.iceServers = iceServers
+  })();
+  
+  const peerConnection = new RTCPeerConnection(peerConfiguration);
+
+// const configuration = {
+//     iceServers: [
+//       { urls: 'turn:turn02.hubl.in?transport=tcp' }
+//     ]
+//   };
+// const peerConnection = new RTCPeerConnection(configuration);
 const offerElem = document.getElementById("offerReceiver");
 const answerElem = document.getElementById("answerReceiver");
 const iceCandidatesElem = document.getElementById("iceCandidatesReceiver");

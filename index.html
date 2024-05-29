@@ -13,6 +13,8 @@
 <body class="dark:bg-slate-950 flex flex-col min-h-screen">
   <div class="flex-1">
   <h1 class="text-4xl text-center mx-auto font-extrabold font-sans p-10 m-6 italic">ScreenKIN</h1>
+  <div id="flashcopy" style="visibility: hidden;" class="rounded-sm font-thin text-center p-2 px-8 text-gray-200">"Copied to Clipboard"</div>
+    
   <div class="mx-auto items-center space-x-4 p-6 max-w-sm row-auto flex justify-center">
     <select class="rounded-lg font-medium border-indigo-50 p-2 px-8 bg-purple-100 text-gray-800" id="role">
       <option value="sender">Sender</option>
@@ -31,7 +33,7 @@
         Sharing</button>
     </div>
     <div class="mx-auto  items-center space-x-4 p-6 px-auto max-w-screen-lg row-auto flex flex-row justify-center">
-      <textarea
+      <textarea 
         class="rounded-lg font-normal border-indigo-50mx-auto bg-transparent self-center space-x-4 p-4 m-4 max-w-md min-w-sm text-gray-200 flex"
         id="offer" placeholder="Offer will appear here" readonly></textarea>
       <textarea
@@ -87,6 +89,7 @@
   <!-- <div id="log"></div> -->
   <script src="sender.js"></script>
   <script src="receiver.js"></script>
+  <script src="func.js"></script>
   <script>
     document.getElementById('select').addEventListener('click', () => {
       const role = document.getElementById('role').value;
@@ -98,7 +101,7 @@
         document.getElementById('receiver').style.display = 'block';
         document.getElementById('sender').style.display = 'none';
         loadReceiver();
-      }
+      };
       document.getElementById('role').style.display = 'none';
       document.getElementById('select').style.display = 'none';
     });
