@@ -10,7 +10,7 @@ function loadReceiver() {
     configuration.iceServers = iceServers
   })();
   
-  const peerConnection = new RTCPeerConnection(peerConfiguration);
+  const peerConnection = new RTCPeerConnection(configuration);
 
 // const configuration = {
 //     iceServers: [

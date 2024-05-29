@@ -11,7 +11,7 @@ function loadSender() {
     configuration.iceServers = iceServers
   })();
   
-  const peerConnection = new RTCPeerConnection(peerConfiguration);
+  const peerConnection = new RTCPeerConnection(configuration);
 const answerElem = document.getElementById("answerSender");
 const startElem = document.getElementById("start");
 const stopElem = document.getElementById("stop");
